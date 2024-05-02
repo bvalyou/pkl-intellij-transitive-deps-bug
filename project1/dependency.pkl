@@ -1,0 +1,7 @@
+open module Dependency
+
+import "@k8s/K8sResource.pkl"
+
+k8sResources: Listing<K8sResource> = new {}
+
+function validateResource(resource: K8sResource) = resource != null

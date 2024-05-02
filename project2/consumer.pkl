@@ -1,0 +1,11 @@
+extends "@project1/dependency.pkl"
+
+import "@k8s/api/core/v1/ConfigMap.pkl"
+
+k8sResources {
+  // this shows as an error even though ConfigMap extends K8sResource
+  new ConfigMap {}
+}
+
+// this doesn't show as an error with the same interface
+isValid = validateResource(k8sResources[0])
