@@ -5,5 +5,8 @@ import "@k8s/api/core/v1/ConfigMap.pkl"
 // this shows as an error even though the Pkl runtime understands that they're the same type
 configMap = new ConfigMap {}
 
+// this amend doesn't cross the transitive dependency boundary
+foo = new Foo {}
+
 // this doesn't show as an error with the same interface
 isValid = validateConfigMap(configMap)
