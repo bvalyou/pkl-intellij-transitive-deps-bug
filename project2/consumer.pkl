@@ -2,10 +2,8 @@ extends "@project1/dependency.pkl"
 
 import "@k8s/api/core/v1/ConfigMap.pkl"
 
-k8sResources {
-  // this shows as an error even though ConfigMap extends K8sResource
-  new ConfigMap {}
-}
+// this shows as an error even though the Pkl runtime understands that they're the same type
+configMap = new ConfigMap {}
 
 // this doesn't show as an error with the same interface
-isValid = validateResource(k8sResources[0])
+isValid = validateConfigMap(configMap)

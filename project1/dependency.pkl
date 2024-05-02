@@ -1,7 +1,7 @@
 open module Dependency
 
-import "@k8s/K8sResource.pkl"
+import "@k8s/api/core/v1/ConfigMap.pkl"
 
-k8sResources: Listing<K8sResource> = new {}
+configMap: ConfigMap?
 
-function validateResource(resource: K8sResource) = resource != null
+function validateConfigMap(resource: ConfigMap?) = resource != null
